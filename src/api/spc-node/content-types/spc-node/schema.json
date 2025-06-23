@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spc_nodes",
+  "info": {
+    "singularName": "spc-node",
+    "pluralName": "spc-nodes",
+    "displayName": "spc-node"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "folder",
+        "document"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::spc-node.spc-node",
+      "mappedBy": "parent"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::spc-node.spc-node",
+      "inversedBy": "children"
+    },
+    "navigation": {
+      "type": "component",
+      "component": "shared.navigation-link",
+      "repeatable": true
+    }
+  }
+}

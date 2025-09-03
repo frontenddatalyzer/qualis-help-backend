@@ -43,6 +43,11 @@
       "type": "component",
       "component": "shared.navigation-link",
       "repeatable": true
+    },
+    "showTree": {
+      "type": "boolean",
+      "required": true,
+      "default": true
     }
   }
 }

@@ -398,6 +398,9 @@ export interface ApiSpcNodeSpcNode extends Struct.CollectionTypeSchema {
     navigation: Schema.Attribute.Component<'shared.navigation-link', true>;
     parent: Schema.Attribute.Relation<'manyToOne', 'api::spc-node.spc-node'>;
     publishedAt: Schema.Attribute.DateTime;
+    showTree: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
     text: Schema.Attribute.String;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['folder', 'document']>;

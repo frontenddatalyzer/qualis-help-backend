@@ -46,8 +46,7 @@
     },
     "showTree": {
       "type": "boolean",
-      "required": true,
-      "default": true
+      "required": false
     }
   }
 }

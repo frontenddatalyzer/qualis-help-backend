@@ -1,8 +1,8 @@
 {
-  "name": "backend",
-  "version": "0.1.0",
+  "name": "datalyzer-qualis-help-docs-backend",
+  "version": "1.0.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "Strapi backend for Datalyzer Qualis product help documentation",
   "scripts": {
     "build": "strapi build",
     "console": "strapi console",
@@ -19,7 +19,7 @@
     "@strapi/plugin-users-permissions": "5.16.0",
     "@strapi/strapi": "5.16.0",
     "better-sqlite3": "11.3.0",
-    "develop": "^1.0.0",
+    "pg": "8.13.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",

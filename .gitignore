@@ -12,6 +12,11 @@ dist/
 
 # Migration & upload backups - never commit
 datalyzer-backup.tar.gz
+qualis-backup.tar.gz
+*.tar.gz
+*.backup
+*.tar
+*.sql
 .tmp/data.db.backup
 public/uploads.backup/
 public/uploads_backup_*/

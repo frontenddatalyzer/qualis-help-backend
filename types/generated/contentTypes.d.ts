@@ -411,6 +411,41 @@ export interface ApiFmeaNodeFmeaNode extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMsaNodeMsaNode extends Struct.CollectionTypeSchema {
+  collectionName: 'msa_nodes';
+  info: {
+    displayName: 'msa-node';
+    pluralName: 'msa-nodes';
+    singularName: 'msa-node';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    children: Schema.Attribute.Relation<'oneToMany', 'api::msa-node.msa-node'>;
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::msa-node.msa-node'
+    > &
+      Schema.Attribute.Private;
+    navigation: Schema.Attribute.Component<'shared.navigation-link', true>;
+    parent: Schema.Attribute.Relation<'manyToOne', 'api::msa-node.msa-node'>;
+    publishedAt: Schema.Attribute.DateTime;
+    showTree: Schema.Attribute.Boolean;
+    text: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['folder', 'document']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSpcNodeSpcNode extends Struct.CollectionTypeSchema {
   collectionName: 'spc_nodes';
   info: {
@@ -956,6 +991,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::fmea-node.fmea-node': ApiFmeaNodeFmeaNode;
+      'api::msa-node.msa-node': ApiMsaNodeMsaNode;
       'api::spc-node.spc-node': ApiSpcNodeSpcNode;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

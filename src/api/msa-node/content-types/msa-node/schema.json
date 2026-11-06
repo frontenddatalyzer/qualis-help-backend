@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "msa_nodes",
+  "info": {
+    "singularName": "msa-node",
+    "pluralName": "msa-nodes",
+    "displayName": "msa-node"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "folder",
+        "document"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::msa-node.msa-node",
+      "mappedBy": "parent"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::msa-node.msa-node",
+      "inversedBy": "children"
+    },
+    "navigation": {
+      "type": "component",
+      "component": "shared.navigation-link",
+      "repeatable": true
+    },
+    "showTree": {
+      "type": "boolean",
+      "required": false
+    }
+  }
+}

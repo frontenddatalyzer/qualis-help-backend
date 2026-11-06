@@ -13,4 +13,4 @@ export default factories.createCoreRouter('api::msa-node.msa-node',{
             middlewares: ["api::msa-node.msa-nodes-populate"]
         }
     }
-});
+}); /*msa*/
